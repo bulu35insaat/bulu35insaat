@@ -1,0 +1,98 @@
+.project{
+    margin-bottom: 3rem;
+}
+.project-title {
+    font-family: var(--poppins);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--black-color);
+    font-size: var(--font-lg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    column-gap: 1.5rem;
+    margin-bottom: 3rem;
+    padding: 1rem 2rem;
+}
+
+.projects {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  justify-content: flex-start;
+    align-items: center;
+    
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+    padding: 10px 0;
+    border-radius: 20px;
+    width: 450px; /* İstenilen genişliği ayarlayabilirsiniz */
+    max-width: 100%; /* Maksimum genişlik olarak ekran genişliğine uyum sağlar */
+    
+    
+}
+
+.project-card img {
+    max-width: 500px;
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px;
+}
+
+.project-card__info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%; /* .project-card__info'yu 100% genişliğe ayarlıyoruz */
+    padding: .85rem; /* İçerik arasına boşluk eklemek için */
+    background-color: #fff; /* Arka plan rengi ekledim */
+    border-top: 1px solid #ccc; /* Üst kısma bir sınır ekledim */
+}
+
+.project-card__info-project-name {
+    font-family: var(--jost);
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--black-color);
+    font-size: var(--font-sm);
+}
+
+.project-card__info-project-view {
+    font-family: var(--jost);
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--black-color);
+    font-size: var(--font-sm);
+    
+    
+    
+}
+
+/* Genel stillemeler burada */
+
+/@media screen and (max-width: 768px) {
+    .project-title {
+        padding: 1rem; /* Başlık için padding'i ayarlayın */
+        font-size: var(--font-sm);
+    }
+
+    .project-card {
+        width: 100%; /* Projeleri tam ekran genişliğine ayarlayın */
+    }
+
+    .project-card__info {
+        flex-direction: column; /* Bilgiyi sütun düzenine ayarlayın */
+    }
+}

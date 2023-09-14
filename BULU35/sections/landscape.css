@@ -1,0 +1,19 @@
+.landscape{
+    width: 100%;
+    height: 1000px;
+    background: url("/assets/building-8.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    object-fit: contain;
+    object-position: center;
+    margin-bottom: 3rem;
+}
+
+/* Mobil cihazlar için media query */
+@media (max-width: 768px) {
+    .landscape {
+        height: 500px; /* Mobil ekranlarda yüksekliği azaltabilirsiniz */
+        margin-bottom: 1.5rem; /* İstenilen boşluk miktarına göre ayarlayabilirsiniz */
+    }
+}
