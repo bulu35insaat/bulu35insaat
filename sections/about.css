@@ -1,0 +1,92 @@
+.about {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    min-height: 800px;
+    background-color: var(--white-color);
+    text-align: center;
+    margin-bottom: 2rem;
+
+}
+
+.about-text {
+    padding: 3rem 1.5rem;
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+
+.about-title {
+    font-family: var(--poppins);
+    font-size: var(--font-lg);
+    color: var(--black-color);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    padding-left: 3rem;
+}
+
+.about-description {
+    font-family: var(--jost);
+    font-size: var(--font-sm);
+    color: var(--black-color);
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    width: 600px;   
+    text-align: center;
+    
+}
+
+.about-image {
+    flex: 1;
+    background-image: url("/assets/about-hero.jpg");
+    width: 31.25rem;
+    height: 31.25rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: contain;
+    object-position: center;
+    
+   
+}
+
+    
+
+/* Mobil cihazlar için düzenlemeler */
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column; /* Sütun düzeni kullanarak içeriği üst üste yerleştir */
+        min-height: auto; /* Minimum yüksekliği kaldır */
+    }
+
+    .about-text {
+        padding: 2rem 1rem; /* Daha küçük bir iç kenar boşluğu */
+        text-align: center;
+        width: 100%; /* Genişlik tam genişlik olsun */
+    }
+
+    .about-title {
+        font-size: var(--font-me); /* Daha küçük bir başlık font boyutu */
+        padding-left: 0; /* Sol kenar boşluğunu kaldır */
+    }
+
+    .about-description {
+        font-size: var(--font-xs); /* Daha küçük bir açıklama font boyutu */
+        width: 100%; /* Genişlik tam genişlik olsun */
+    }
+
+    .about-image {
+        width: 100%; /* Genişlik tam genişlik olsun */
+        height: auto; /* Otomatik yükseklik */
+    }
+}
+
