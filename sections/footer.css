@@ -1,0 +1,18 @@
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+}
+footer p{
+    font-family: var(--jost-);
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.2;
+    font-size: var(--font-sm);
+    color: black;
+}
+

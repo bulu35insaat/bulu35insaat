@@ -1,6 +1,6 @@
 /* Genel stiller */
 .hero {
-    background-image: url('/assets/building-3.jpg');
+    background-image: url("/assets/building-3.jpg");
     background-position: cover;
     background-repeat: no-repeat;
     background-size: cover;
