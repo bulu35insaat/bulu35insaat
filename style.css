@@ -3,13 +3,13 @@
 /* Other css files import */
 
 
-@import url("sections/hero.css");
+/*@import url("sections/hero.css");
 @import url("sections/about.css");
 @import url("sections/project.css");
 @import url("sections/landscape.css");
 @import url("sections/what-we-do.css");
 @import url("sections/contact.css");
-@import url("sections/footer.css");
+@import url("sections/footer.css"); */
 
 :root{
 
@@ -64,4 +64,499 @@ html {
     padding: 0;
   }
 
+/* HERO */
+/* Genel stiller */
+.hero {
+    background-image: url("assets/building-3.jpg");
+    background-position: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: contain;
+    object-position: center;
+    height: 900px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
 
+.hero-title {
+    font-family: var(--poppins-);
+    font-style: normal;
+    font-weight: 700;
+    font-size: var(--font-lg);
+    color: var(--black-color);
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-family: var(--jost-);
+    font-style: normal;
+    font-weight: 400;
+    font-size: var(--font-me);
+    color: var(--black-color);
+    padding-left: 2rem;
+    width: 350px;
+}
+
+/* Mobil cihazlar için düzenlemeler */
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-title,
+    .hero-subtitle {
+        padding-left: 0;
+        text-align: center;
+        width: 100%;
+    }
+}
+/* hero end */
+
+/* About */
+
+.about {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    min-height: 800px;
+    background-color: var(--white-color);
+    text-align: center;
+    margin-bottom: 2rem;
+
+}
+
+.about-text {
+    padding: 3rem 1.5rem;
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+
+.about-title {
+    font-family: var(--poppins);
+    font-size: var(--font-lg);
+    color: var(--black-color);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    padding-left: 3rem;
+}
+
+.about-description {
+    font-family: var(--jost);
+    font-size: var(--font-sm);
+    color: var(--black-color);
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    width: 600px;   
+    text-align: center;
+    
+}
+
+.about-image {
+    flex: 1;
+    background-image: url("assets/about-hero.jpg");
+    width: 31.25rem;
+    height: 31.25rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: contain;
+    object-position: center;
+    
+   
+}
+
+    
+
+/* Mobil cihazlar için düzenlemeler */
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column; /* Sütun düzeni kullanarak içeriği üst üste yerleştir */
+        min-height: auto; /* Minimum yüksekliği kaldır */
+    }
+
+    .about-text {
+        padding: 2rem 1rem; /* Daha küçük bir iç kenar boşluğu */
+        text-align: center;
+        width: 100%; /* Genişlik tam genişlik olsun */
+    }
+
+    .about-title {
+        font-size: var(--font-me); /* Daha küçük bir başlık font boyutu */
+        padding-left: 0; /* Sol kenar boşluğunu kaldır */
+    }
+
+    .about-description {
+        font-size: var(--font-xs); /* Daha küçük bir açıklama font boyutu */
+        width: 100%; /* Genişlik tam genişlik olsun */
+    }
+
+    .about-image {
+        width: 100%; /* Genişlik tam genişlik olsun */
+        height: auto; /* Otomatik yükseklik */
+    }
+}
+
+/* About end */
+
+
+/* Project */
+.project{
+    margin-bottom: 3rem;
+}
+.project-title {
+    font-family: var(--poppins);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--black-color);
+    font-size: var(--font-lg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    column-gap: 1.5rem;
+    margin-bottom: 3rem;
+    padding: 1rem 2rem;
+}
+
+.projects {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  justify-content: flex-start;
+    align-items: center;
+    
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+    padding: 10px 0;
+    border-radius: 20px;
+    width: 450px; /* İstenilen genişliği ayarlayabilirsiniz */
+    max-width: 100%; /* Maksimum genişlik olarak ekran genişliğine uyum sağlar */
+    
+    
+}
+
+.project-card img {
+    max-width: 500px;
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px;
+}
+
+.project-card__info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%; /* .project-card__info'yu 100% genişliğe ayarlıyoruz */
+    padding: .85rem; /* İçerik arasına boşluk eklemek için */
+    background-color: #fff; /* Arka plan rengi ekledim */
+    border-top: 1px solid #ccc; /* Üst kısma bir sınır ekledim */
+}
+
+.project-card__info-project-name {
+    font-family: var(--jost);
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--black-color);
+    font-size: var(--font-sm);
+}
+
+.project-card__info-project-view {
+    font-family: var(--jost);
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--black-color);
+    font-size: var(--font-sm);
+    
+    
+    
+}
+
+/* Genel stillemeler burada */
+
+/@media screen and (max-width: 768px) {
+    .project-title {
+        padding: 1rem; /* Başlık için padding'i ayarlayın */
+        font-size: var(--font-sm);
+    }
+
+    .project-card {
+        width: 100%; /* Projeleri tam ekran genişliğine ayarlayın */
+    }
+
+    .project-card__info {
+        flex-direction: column; /* Bilgiyi sütun düzenine ayarlayın */
+    }
+}
+/* Project end */
+
+/* Landscape */
+.landscape{
+    width: 100%;
+    height: 1000px;
+    background: url("assets/building-8.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    object-fit: contain;
+    object-position: center;
+    margin-bottom: 3rem;
+}
+
+/* Mobil cihazlar için media query */
+@media (max-width: 768px) {
+    .landscape {
+        height: 500px; /* Mobil ekranlarda yüksekliği azaltabilirsiniz */
+        margin-bottom: 1.5rem; /* İstenilen boşluk miktarına göre ayarlayabilirsiniz */
+    }
+}
+
+/* landscape end*/
+
+/* what we do */
+.what-we-do {
+    width: 100%;
+    height: auto;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    padding: 2rem 2rem;
+}
+
+.what-we-do .left-col,
+.what-we-do .right-col {
+    flex: 1; /* İçeriklerin eşit genişlikte olmasını sağlar */
+    text-align: center; /* İçerikleri ortala */
+    color: black; /* Yazı rengini beyaz yap */
+}
+
+.what-we-do .right-col h4,
+.what-we-do .left-col h4 {
+    font-family: var(--poppins);
+    font-style: normal;
+    font-weight: 700;
+    font-size: var(--font-lg);
+    line-height: 1.5;
+}
+
+.what-we-do .right-col p,
+.what-we-do .left-col p {
+    font-family: var(--jost);
+    font-style: normal;
+    font-weight: 400;
+    font-size: var(--font-me);
+    line-height: 1.5;
+}
+
+.what-we-do .right-col ul li,
+.what-we-do .left-col ul li {
+    font-family: var(--jost);
+    font-style: normal;
+    font-weight: 300;
+    font-size: var(--font-sm);
+    line-height: 1.2;
+    margin-bottom: 1rem
+}
+.WhatsApp{
+    margin-top: 2.5rem;
+}
+.whatsapp-button{
+ -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: .5rem;
+    border: solid 1px #20538D;
+
+    background: green;
+    color: white;
+    padding: .5rem 1rem;
+    
+      font-family: var(--jost);
+    font-style: normal;
+    font-weight: 300;
+    font-size: var(--font-sm);
+    line-height: 1.2;
+    margin: 2rem 0;
+    text-align: center;
+    
+}
+
+.whatsapp-button:hover{
+    background-color: white;
+    color: green;
+    
+}
+
+/* Ekran genişliği 768 pikselden küçükse (mobil cihazlar için) */
+@media screen and (max-width: 768px) {
+    .what-we-do {
+        flex-direction: column; /* Sıralı düzenleme */
+        text-align: center; /* İçerikleri ortala */
+        padding: 1rem; /* Daha az boşluk */
+    }
+
+    .what-we-do .left-col,
+    .what-we-do .right-col {
+        width: 100%; /* Genişlik 100% */
+        margin-bottom: 1rem; /* Alt boşluk */
+    }
+    .what-we-do .right-col h4,
+.what-we-do .left-col h4 {
+    font-family: var(--poppins);
+    font-style: normal;
+    font-weight: 700;
+    font-size: var(--font-me);
+    line-height: 1.1;
+}
+    
+    .whatsapp-button {
+        margin-top: 1rem; /* WhatsApp düğmesi için üst boşluk */
+    }
+    
+}
+
+
+/* what we do end */
+
+/* Contact */
+.contact {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    padding: 3rem;
+}
+
+.contact .left-col {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 1rem;
+}
+
+.contact .right-col {
+    flex: 1;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.contact .right-col .inner-column {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.contact .right-col .inner-column .col-right {
+    text-align: center;
+}
+
+.contact .right-col .col-right ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact .right-col .contact-h4,
+.contact .right-col .inner-column .col-left h5,
+.contact .right-col .inner-column .col-right h5 {
+    font-family: var(--poppins);
+    font-weight: 600;
+    font-size: var(--font-me);
+    line-height: 1.2;
+    color: var(--black-color);
+    text-align: center;
+    margin-bottom: 1rem
+}
+.inner-column .col-left {
+    margin-bottom: 1rem
+    
+    
+}
+.contact .right-col .contact-p,
+.contact .right-col a,
+.contact .right-col tel {
+    font-family: var(--jost);
+    font-weight: 300;
+    font-size: var(--font-sm);
+    line-height: 1.2;
+    color: var(--black-color);
+    text-align: center;
+    margin-bottom: .5rem
+}
+
+.social-icon {
+    width: 2rem;
+    height: 2rem;
+    margin: 1rem;
+}
+
+
+/* Contact end */
+
+/* Footer */
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+}
+footer p{
+    font-family: var(--jost-);
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.2;
+    font-size: var(--font-sm);
+    color: black;
+}
+
+
+/* Footer end */
