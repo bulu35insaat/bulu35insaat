@@ -218,23 +218,34 @@ html {
 .video-container {
     display: flex;
     flex-wrap: wrap;
-    align-items: stretch;
     justify-content: center;
-    column-gap:1rem;
+    gap: 2rem;
     width: 100%;
+    padding: 2rem;
 }
 
 .video-item {
-    width: 100%;
-    max-width: 18.75rem; /* Mobil cihazlarda maksimum genişlik belirleme */
-    padding: 1rem;
+    flex: 1 1 560px; /* minimum 560px genişlikten başlasın */
+    max-width: 800px;
     box-sizing: border-box;
-    margin-right: 1rem;
 }
 
 .video-item iframe {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 16 / 9; /* responsive oran */
+    border: none;
+
+}
+@media (max-width: 768px) {
+    .video-item {
+        flex: 1 1 100%;
+        max-width: 100%;
+        padding: 1rem 0;
+    }
+
+    .video-item iframe {
+        aspect-ratio: 16 / 9;
+    }
 }
 
 /* Mobil cihazlar için ek ayarlar */
@@ -337,7 +348,7 @@ html {
 
 /* Genel stillemeler burada */
 
-/@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .project-title {
         padding: 1rem; /* Başlık için padding'i ayarlayın */
         font-size: var(--font-sm);
@@ -486,90 +497,139 @@ html {
 /* what we do end */
 
 /* Contact */
+/* === Contact Section === */
 .contact {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
-    gap: 2rem;
-    width: 100%;
-    padding: 3rem;
+    padding: 4rem 2rem;
+    background-color: #f7f7f7;
+    border-top: 2px solid #e0e0e0;
+    border-bottom: 2px solid #e0e0e0;
 }
 
+/* Left video side */
 .contact .left-col {
-    flex: 1;
+    flex: 1 1 500px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 2rem;
 }
 
-video {
+.contact video {
     max-width: 100%;
     height: auto;
     border-radius: 1rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
+/* Right contact info */
 .contact .right-col {
-    flex: 1;
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
+    flex: 1 1 500px;
     padding: 2rem;
+    background-color: #ffffff;
     border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.contact .right-col .inner-column {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-}
-
-.contact .right-col .inner-column .col-right {
-    text-align: center;
-}
-
-.contact .right-col .col-right ul {
-    display: flex;
-    list-style-type: none;
-    padding: 0;
-}
-
-.contact .right-col .contact-h4,
-.contact .right-col .inner-column .col-left h5,
-.contact .right-col .inner-column .col-right h5 {
+.contact .contact-h4 {
     font-family: var(--poppins);
-    font-weight: 600;
-    font-size: var(--font-me);
-    line-height: 1.2;
+    font-size: 1.5rem;
+    font-weight: 700;
     color: var(--black-color);
     text-align: center;
-    margin-bottom: 1rem
-}
-.inner-column .col-left {
-    margin-bottom: 1rem
-    
-    
-}
-.contact .right-col .contact-p,
-.contact .right-col a,
-.contact .right-col tel {
-    font-family: var(--jost);
-    font-weight: 300;
-    font-size: var(--font-sm);
-    line-height: 1.2;
-    color: var(--black-color);
-    text-align: center;
-    margin-bottom: .5rem
+    margin-bottom: 2rem;
 }
 
-.social-icon {
+/* İçteki 2 kolon */
+.contact .inner-column {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+/* Sol içerik */
+.inner-column .col-left,
+.inner-column .col-right {
+    flex: 1 1 200px;
+}
+
+.inner-column h5 {
+    font-family: var(--poppins);
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--black-color);
+}
+
+.contact-p,
+.contact a,
+.contact tel {
+    font-family: var(--jost);
+    font-size: var(--font-sm);
+    color: var(--black-color);
+    line-height: 1.6;
+    display: block;
+    margin-bottom: 0.5rem;
+    word-break: break-word;
+}
+
+.contact a:hover {
+    color: var(--orange-color);
+}
+
+/* Sosyal ikonlar */
+.contact .social-icon {
     width: 2rem;
     height: 2rem;
-    margin: 1rem;
+    margin-right: 0.75rem;
+    transition: transform 0.2s ease;
 }
+.social-media {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.contact .social-icon:hover {
+    transform: scale(1.1);
+}
+
+.contact .col-right ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+/* Responsive için medya sorgusu */
+@media screen and (max-width: 768px) {
+    .contact {
+        flex-direction: column;
+        padding: 2rem 1rem;
+    }
+
+    .contact .right-col {
+        padding: 1.5rem;
+    }
+
+    .inner-column {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .inner-column .col-left,
+    .inner-column .col-right {
+        width: 100%;
+        text-align: center;
+    }
+}
+
 
 
 /* Contact end */
